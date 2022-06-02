@@ -31,6 +31,12 @@ public class EntryControllers {
 		return true;
 	}
 	
+	@GetMapping("/test/{value}")
+	public @ResponseBody boolean apiTest(@PathVariable("value")String value) {
+		System.out.println(value);
+		return true;
+	}
+	
 	@PostMapping("/screen")
 	public String screenSave(@RequestParam ("value") String s_value) {
 		double value = Double.parseDouble(s_value);
