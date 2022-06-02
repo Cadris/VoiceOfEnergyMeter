@@ -1,7 +1,5 @@
 package com.sayan.vom.Services;
 
-import java.text.ParseException;
-
 import org.springframework.stereotype.Service;
 
 @Service
@@ -39,5 +37,32 @@ public class PriceCalculatorService {
 		}
 		
 		return costs;
+	}
+	
+	public double getPrice(double units) {
+		double costs = 0.0;
+		
+		if(units<=0.0) {
+			return 0.0;
+		}
+	
+		if(units<=25.0) {
+			costs = 5.18 * units;
+		} else if(units<=60) {
+			costs = (5.18*25) + (5.69*(60-25));
+		} else if(units<=100) {
+			costs = (5.18*25) + (5.69*35) + (6.7*(units-60));
+		} else if(units<=150) {
+			costs = (5.18*25) + (5.69*35) + (6.7*40) + (7.45*(units-100));
+		} else if(units<=200) {
+			costs = (5.18*25) + (5.69*35) + (6.7*40) + (7.45*50) + (7.62*(units-150));
+		} else if(units<=300) {
+			costs = (5.18*25) + (5.69*35) + (6.7*40) + (7.45*50) + (7.62*50) + (7.62*(units-200));
+		} else {
+			costs = (5.18*25) + (5.69*35) + (6.7*40) + (7.45*50) + (7.62*50) + (7.62*300) + (9.21*(units-300));
+		}
+		
+		//Round off till 2nd decimal place
+		return Math.round(costs*100.0)/100.0;
 	}
 }
