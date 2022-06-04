@@ -6,7 +6,11 @@
 
 ### APIs Made For the Project ###
 
-API Path | Use
---------|--------
-`/entry/api/{value}`| Make a `Get` Request to this link to set data to the database
-`/entry/test/{value}`| Make a `Get` Request to this link to test out the connection to the server and familiarise making request.
+API Path |Request Type| Use
+--------|-------|--------
+`/entry/api/{value}`|`GET`| Make a **Rest Request** to this link to set data to the database.
+`/entry/test/{value}`|`GET`| Make a Request to this link to test out the connection to the server and familiarise making request.
+`/entry/screen`|`POST`| Make a Request to this with `value` as the `@RequestParam`.
+`/home`|`GET`| Make a request to Display the **Home Page**.
+`/manualEntryWeb`|`GET`| Make a request to this page to display a form to enter data manually from the Screen.
+`/dataChartWeb` |`GET`| Make a request to this page to display all the data passed to the database. It's kind of like history.
