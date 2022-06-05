@@ -11,12 +11,18 @@
 	<groupId>com.sayan</groupId>
 	<artifactId>vom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>vom</name>
 	<description>Voice Of Energy Meter</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+	        <groupId>org.apache.tomcat.embed</groupId>
+	        <artifactId>tomcat-embed-jasper</artifactId>
+	        <scope>provided</scope>
+	    </dependency>
 	
 		<dependency>
 			<groupId>javax.servlet</groupId>
