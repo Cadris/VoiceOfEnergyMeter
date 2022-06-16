@@ -28,6 +28,8 @@ public class EntryControllers {
 		ed.setPower(Double.parseDouble(value));
 		
 		edService.save(ed);
+		
+		System.out.println("Value Inserted :"+value);
 		return true;
 	}
 	
@@ -47,6 +49,7 @@ public class EntryControllers {
 		ed.setPower(value);
 		
 		edService.save(ed);
+		System.out.println("Value Inserted :"+value);
 		return "redirect:/home";
 	}
 	

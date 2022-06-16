@@ -55,7 +55,6 @@ public class IndexController {
 	public Map autoReload(Model model) {
 		
 		EnergyData ed = edRepo.getLastEntry();
-		System.out.println("IN Server");
 		
 		model.addAttribute("value", ed.getPower());
 		model.addAttribute("valueCost", calcService.getPrice(ed.getPower()));
